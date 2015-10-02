@@ -2,6 +2,17 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+# Bootstrap::Application.routes.draw.do
+
+  get '/about' 		=> 'high_voltage/pages#show', id: 'about'
+  get '/contact'	=> 'high_voltage/pages#show', id: 'contact'
+  get '/privacy'	=> 'high_voltage/pages#show', id: 'privacy'
+  get '/terms'		=> 'high_voltage/pages#show', id: 'terms'
+
+  get '/home', to: redirect('/')
+
+  root :to => 'high_voltage/pages#show', id: 'home'
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
